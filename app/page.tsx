@@ -37,8 +37,14 @@ export default function Home() {
       // dataの構造に応じて変更が必要かもしれない
       setResponseText(data?.response ?? 'No response');
       setWasResponsed(true);
-    } catch (error: any) {
-      setResponseText(`Error: ${error.message}`);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        // Error型として扱える
+        setResponseText(`Error: ${error.message}`);
+      } else {
+        // Errorでない場合のフォールバック
+        setResponseText('An unknown error occurred');
+      }
       setWasResponsed(true);
     } finally {
       setLoading(false);
