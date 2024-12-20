@@ -64,7 +64,10 @@ export default function Home() {
           ) : loading ? (
             // スケルトン
             <div className="w-full flex flex-col gap-4 animate-pulse">
-              <div className="h-10 bg-amber-500 rounded-sm"></div>
+              <div className="h-4 bg-amber-400 rounded-sm"></div>
+              <div className="h-4 bg-amber-400 rounded-sm"></div>
+              <div className="h-4 bg-amber-400 rounded-sm"></div>
+              <div className="h-4 w-4/12 bg-amber-400 rounded-sm"></div>
             </div>
           ) : (
             <form
@@ -77,7 +80,7 @@ export default function Home() {
               <div className="flex flex-col gap-4">
                 <div>
                   <input
-                    className="w-full text-slate-600 px-2 py-1 rounded-sm text-lg outline-none bg-amber-50"
+                    className="w-full text-slate-600 px-2 py-1 rounded-lg text-lg focus:border-amber-800 focus:outline-none focus:ring-0 border-2 border-transparent outline-none bg-amber-50"
                     type="text"
                     placeholder="Paste URL of your LLM server's endpoint here."
                     value={endpoint}
@@ -86,7 +89,7 @@ export default function Home() {
                 </div>
                 <div>
                   <input
-                    className="w-full text-slate-600 px-2 py-1 rounded-sm text-lg outline-none bg-amber-50"
+                    className="w-full text-slate-600 px-2 py-1 rounded-lg text-lg focus:border-amber-800 focus:outline-none focus:ring-0 border-2 border-transparent bg-amber-50"
                     type="text"
                     placeholder="hola!"
                     value={message}
